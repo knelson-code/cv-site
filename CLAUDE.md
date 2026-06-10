@@ -1,7 +1,6 @@
-# CLAUDE.md — keithnelson.cv (visual CV site)
+# CLAUDE.md
 
-Context briefing for Claude Code (or any AI assistant) working on this repo.
-Read this fully before changing anything.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## What this is
 
@@ -12,7 +11,7 @@ New Day Climate) pivoting into renewable energy roles. This site is the
 exists outside this repo (Keith has it locally) and is the source of truth
 for facts.
 
-## Files
+## Architecture & files
 
 - `index.html` — the entire site. Single self-contained page: A4 print layout
   + `@media screen` wrapper (dark sage backdrop, centered page, floating
