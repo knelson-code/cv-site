@@ -22,6 +22,12 @@ for facts.
 - `Keith_Nelson_CV.pdf` — the downloadable PDF, **generated from index.html**
   via WeasyPrint. Regenerate after any content change:
   `pip install weasyprint && python -m weasyprint index.html Keith_Nelson_CV.pdf`
+  NOTE for Windows (Claude Code on Keith's PC): WeasyPrint needs GTK and often
+  fails to install. Use headless Chrome/Edge instead — renders the same
+  @media print CSS:
+  `"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --print-to-pdf="Keith_Nelson_CV.pdf" --no-pdf-header-footer "index.html"`
+  (or `chrome.exe` with the same flags). If neither works, ask Keith to request
+  the regeneration in his Claude Cowork session, which has WeasyPrint.
   Then verify it is still exactly 1 page (`pdfinfo`) and visually check a
   render (`pdftoppm -jpeg -r 100 Keith_Nelson_CV.pdf check`).
 
