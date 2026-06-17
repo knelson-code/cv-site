@@ -40,11 +40,11 @@
   }
 
   /* ===== Stat band ===== */
-  .stats { display: flex; background: var(--green); color: #fff; padding: 2.6mm 14mm; height: 14mm; }
+  .stats { display: flex; background: var(--green); color: #fff; padding: 2.6mm 14mm; height: 14mm; position: relative; z-index: 1; margin-bottom: -0.3mm; }
   .stat { flex: 1; text-align: center; border-right: 1px solid rgba(255,255,255,0.25); padding: 0 2mm; }
   .stat:last-child { border-right: none; }
   .stat .num { font-family: "Lora", serif; font-size: 14pt; font-weight: 700; line-height: 1.1; }
-  .stat .lbl { font-size: 6.4pt; text-transform: uppercase; letter-spacing: 0.8pt; opacity: 0.85; margin-top: 0.7mm; }
+  .stat .lbl { font-size: 6pt; text-transform: uppercase; letter-spacing: 0.6pt; opacity: 0.85; margin-top: 0.6mm; line-height: 1.15; }
 
   /* ===== Columns ===== */
   .cols { display: flex; height: 249mm; overflow: hidden; page-break-inside: avoid; }
@@ -133,7 +133,7 @@
   <div class="header">
     <div class="toprow">
       <h1>KEITH <span class="last">NELSON</span></h1>
-      <div class="citizen">US + Spain citizen · full EU &amp; US work rights</div>
+      <div class="citizen">Dual US &amp; Spanish citizen · full EU &amp; US work rights</div>
     </div>
     <div class="titleline">Climate &amp; Energy Transition Consultant — Strategy · Operations · Program Leadership</div>
     <div class="contact">
@@ -145,8 +145,8 @@
   <div class="stats">
     <div class="stat"><div class="num">20+</div><div class="lbl">Years global experience</div></div>
     <div class="stat"><div class="num">5</div><div class="lbl">Experience on 5 continents</div></div>
-    <div class="stat"><div class="num">US$70M</div><div class="lbl">Program operations led</div></div>
-    <div class="stat"><div class="num">50</div><div class="lbl">Person team led</div></div>
+    <div class="stat"><div class="num">US$70M</div><div class="lbl">Program management experience</div></div>
+    <div class="stat"><div class="num">50</div><div class="lbl">Staff managed</div></div>
     <div class="stat"><div class="num">5</div><div class="lbl">Languages</div></div>
   </div>
 
@@ -193,7 +193,7 @@
         <h2>Languages</h2>
         <div class="lang"><span>English</span><span class="lvl">native</span></div>
         <div class="lang"><span>Spanish</span><span class="lvl">full professional</span></div>
-        <div class="lang"><span>Mandarin Chinese</span><span class="lvl">intermediate</span></div>
+        <div class="lang"><span>Mandarin Chinese</span><span class="lvl">basic</span></div>
         <div class="lang"><span>French</span><span class="lvl">basic</span></div>
         <div class="lang"><span>Catalan</span><span class="lvl">basic</span></div>
       </div>
