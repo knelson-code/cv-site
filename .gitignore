@@ -1,0 +1,4 @@
+# Private working files — never publish to the live site / GitHub
+evidence/
+kraken-client-delivery-lead/
+*.output
