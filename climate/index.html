@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<title>Keith Nelson — Climate & Energy Transition Consultant</title>
+<link rel="icon" href="/favicon.ico?v=1" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=1">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=1">
+<link rel="apple-touch-icon" href="/favicon-180.png?v=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1B6B4A;
+    --green-deep: #14523A;
+    --green-tint: #EDF4F0;
+    --green-line: #BFD8CC;
+    --ink: #2B2F2D;
+    --grey: #6A736E;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  html, body { width: 210mm; }
+  body { font-family: "Lato", sans-serif; color: var(--ink); background: #fff; }
+  .page { background: #fff; width: 210mm; height: 297mm; display: flex; flex-direction: column; overflow: hidden; }
+
+  /* ===== Header ===== */
+  .header { height: 34mm; padding: 8mm 14mm 0 14mm; }
+  .header .toprow { display: flex; justify-content: space-between; align-items: center; }
+  h1 { font-family: "Lora", serif; font-size: 27pt; font-weight: 700; letter-spacing: 0.5pt; color: var(--ink); }
+  h1 .last { color: var(--green); }
+  .titleline { font-family: "Lora", serif; font-style: italic; font-size: 9.8pt; color: var(--green-deep); margin-top: 1.3mm; }
+  .contact { margin-top: 2.2mm; font-size: 7.6pt; color: var(--grey); letter-spacing: 0.1pt; }
+  .contact b { color: var(--ink); font-weight: 700; }
+  .sep { color: var(--green-line); padding: 0 1.3mm; }
+  .citizen {
+    font-size: 7.1pt; color: var(--green-deep); flex-shrink: 0;
+    border-radius: 2.6mm; padding: 1.1mm 3mm; white-space: nowrap; margin-left: 2mm;
+    background: var(--green-tint); font-weight: 700; letter-spacing: 0.3pt;
+  }
+
+  /* ===== Stat band ===== */
+  .stats { display: flex; background: var(--green); color: #fff; padding: 2.6mm 14mm; height: 14mm; }
+  .stat { flex: 1; text-align: center; border-right: 1px solid rgba(255,255,255,0.25); padding: 0 2mm; }
+  .stat:last-child { border-right: none; }
+  .stat .num { font-family: "Lora", serif; font-size: 14pt; font-weight: 700; line-height: 1.1; }
+  .stat .lbl { font-size: 6.4pt; text-transform: uppercase; letter-spacing: 0.8pt; opacity: 0.85; margin-top: 0.7mm; }
+
+  /* ===== Columns ===== */
+  .cols { display: flex; height: 249mm; overflow: hidden; page-break-inside: avoid; }
+  .sidebar { width: 64mm; background: var(--green-tint); padding: 5.5mm 5.5mm 4mm 14mm; overflow: hidden; }
+  .main { width: 146mm; padding: 5.5mm 14mm 4mm 8mm; overflow: hidden; }
+
+  h2 {
+    font-family: "Lato", sans-serif; font-weight: 900; font-size: 8.5pt; text-transform: uppercase;
+    letter-spacing: 1.6pt; color: var(--green); margin-bottom: 2.4mm;
+  }
+  .side-sec { margin-bottom: 4mm; }
+  .side-sec h2 { border-bottom: 1px solid var(--green-line); padding-bottom: 1.1mm; }
+
+  /* skill groups + chips */
+  .group { margin-bottom: 2.4mm; }
+  .group h3 { font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7pt; color: var(--grey); margin-bottom: 1.1mm; }
+  .chips { display: flex; flex-wrap: wrap; gap: 1.1mm; }
+  .chip {
+    font-size: 7pt; background: #fff;
+    border-radius: 2.2mm; padding: 0.7mm 2.1mm; color: var(--ink); line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  /* languages */
+  .lang { display: flex; justify-content: space-between; font-size: 8pt; padding: 0.7mm 0; border-bottom: 1px dotted var(--green-line); }
+  .lang:last-child { border-bottom: none; }
+  .lang .lvl { color: var(--grey); font-size: 7.3pt; font-style: italic; }
+
+  /* education */
+  .edu { margin-bottom: 1.8mm; font-size: 7.7pt; line-height: 1.28; }
+  .edu b { display: block; }
+  .edu span { color: var(--grey); font-size: 7.3pt; }
+
+  /* footprint */
+  .fp { font-size: 8pt; line-height: 1.4; }
+  .fp .row { display: flex; margin-bottom: 0.9mm; }
+  .fp .cont { font-weight: 900; color: var(--green-deep); width: 17mm; flex-shrink: 0; font-size: 7.1pt; text-transform: uppercase; letter-spacing: 0.5pt; padding-top: 0.3mm; }
+  .fp .where { color: var(--ink); font-size: 7.7pt; }
+
+  /* ===== Timeline ===== */
+  .timeline { position: relative; padding-left: 6mm; }
+  .timeline::before {
+    content: ""; position: absolute; left: 1.1mm; top: 2mm; bottom: 2mm;
+    width: 2px; background: var(--green-line);
+  }
+  .job { position: relative; margin-bottom: 3.8mm; }
+  .job::before {
+    content: ""; position: absolute; left: -6mm; top: 1.2mm; width: 2.6mm; height: 2.6mm;
+    border-radius: 50%; background: var(--green); border: 2px solid #fff;
+    box-shadow: 0 0 0 1.5px var(--green);
+  }
+  .job .when { font-size: 7.2pt; font-weight: 900; color: var(--green); text-transform: uppercase; letter-spacing: 0.8pt; }
+  .job .role { font-family: "Lora", serif; font-size: 10.2pt; font-weight: 700; margin-top: 0.4mm; }
+  .job .org { font-size: 8.2pt; color: var(--grey); margin-top: 0.3mm; }
+  .job .org b { color: var(--ink); font-weight: 700; }
+  .job ul { margin: 1mm 0 0 3.4mm; }
+  .job li { font-size: 8.1pt; line-height: 1.3; margin-bottom: 0.7mm; }
+  .job li::marker { color: var(--green); }
+  .hl { background: linear-gradient(transparent 62%, #CFE5DA 62%); font-weight: 700; }
+  .clients { font-size: 7.6pt; color: var(--grey); margin-top: 0.8mm; }
+  .clients b { color: var(--green-deep); font-weight: 900; font-size: 7pt; text-transform: uppercase; letter-spacing: 0.5pt; }
+
+  /* beyond work box */
+  .beyond {
+    margin-top: 3mm; border: 1px solid var(--green-line); border-radius: 2mm;
+    background: var(--green-tint); padding: 2.2mm 3.5mm; font-size: 8pt; line-height: 1.4;
+  }
+  .beyond b { color: var(--green); font-weight: 900; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 1pt; }
+
+  @media screen {
+    html, body { width: 100%; }
+    body { background: #39463F; display: flex; flex-direction: column; align-items: center; padding: 10mm 0; }
+    .page { box-shadow: 0 10px 40px rgba(0,0,0,0.45); }
+    .dl { position: fixed; right: 16px; bottom: 16px; background: var(--green); color: #fff;
+          font-family: "Lato", sans-serif; font-weight: 700; font-size: 14px; text-decoration: none;
+          padding: 10px 18px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.25); }
+    .dl:hover { background: var(--green-deep); }
+  }
+  @media print { .dl { display: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="toprow">
+      <h1>KEITH <span class="last">NELSON</span></h1>
+      <div class="citizen">US + Spain citizen · full EU &amp; US work rights</div>
+    </div>
+    <div class="titleline">Climate &amp; Energy Transition Consultant — Strategy · Operations · Program Leadership</div>
+    <div class="contact">
+      <b>Barcelona, Spain</b><span class="sep">|</span>+34 632 589 257<span class="sep">|</span>keith@newdayclimate.com<span class="sep">|</span>linkedin.com/in/keith-nelson-climate-strategy
+    </div>
+  </div>
+
+  <!-- Stat band -->
+  <div class="stats">
+    <div class="stat"><div class="num">20+</div><div class="lbl">Years global experience</div></div>
+    <div class="stat"><div class="num">5</div><div class="lbl">Experience on 5 continents</div></div>
+    <div class="stat"><div class="num">US$70M</div><div class="lbl">Program operations led</div></div>
+    <div class="stat"><div class="num">50</div><div class="lbl">Person team led</div></div>
+    <div class="stat"><div class="num">5</div><div class="lbl">Languages</div></div>
+  </div>
+
+  <!-- Columns -->
+  <div class="cols">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="side-sec">
+        <h2>Core Strengths</h2>
+        <div class="group">
+          <h3>Climate &amp; Sustainability</h3>
+          <div class="chips">
+            <span class="chip">Climate transition strategy</span>
+            <span class="chip">Sustainability strategy</span>
+            <span class="chip">GHG measurement &amp; LCA</span>
+            <span class="chip">Scope 3</span>
+            <span class="chip">Climate risk</span>
+            <span class="chip">Renewables &amp; EV investment</span>
+          </div>
+        </div>
+        <div class="group">
+          <h3>Business Transformation</h3>
+          <div class="chips">
+            <span class="chip">Procurement</span>
+            <span class="chip">Logistics &amp; supply chain</span>
+            <span class="chip">Finance transformation</span>
+            <span class="chip">IT &amp; digital transformation</span>
+          </div>
+        </div>
+        <div class="group">
+          <h3>Leadership &amp; Delivery</h3>
+          <div class="chips">
+            <span class="chip">Strategy consulting</span>
+            <span class="chip">Program management</span>
+            <span class="chip">Team leadership 50+</span>
+            <span class="chip">Budgets to US$70M</span>
+            <span class="chip">Emerging markets</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-sec">
+        <h2>Languages</h2>
+        <div class="lang"><span>English</span><span class="lvl">native</span></div>
+        <div class="lang"><span>Spanish</span><span class="lvl">full professional</span></div>
+        <div class="lang"><span>Mandarin Chinese</span><span class="lvl">intermediate</span></div>
+        <div class="lang"><span>French</span><span class="lvl">basic</span></div>
+        <div class="lang"><span>Catalan</span><span class="lvl">basic</span></div>
+      </div>
+
+      <div class="side-sec">
+        <h2>Education</h2>
+        <div class="edu"><b>Executive MBA</b>ESADE Business School <span>· 2016</span></div>
+        <div class="edu"><b>Postgraduate Degree, Environmental Sustainability</b>University of Salamanca <span>· 2018</span></div>
+        <div class="edu"><b>MA, International Development</b>IBEI / University of Barcelona <span>· 2007</span></div>
+        <div class="edu"><b>BA with Honors</b>Tufts University, Boston <span>· 2000</span></div>
+      </div>
+
+      <div class="side-sec">
+        <h2>Global Footprint</h2>
+        <div class="fp">
+          <div class="row"><span class="cont">Europe</span><span class="where">Spain (base)</span></div>
+          <div class="row"><span class="cont">Americas</span><span class="where">United States (citizen), Chile, Peru, Argentina</span></div>
+          <div class="row"><span class="cont">Asia</span><span class="where">Afghanistan, China, Philippines</span></div>
+          <div class="row"><span class="cont">Africa</span><span class="where">South Sudan, Nigeria, Kenya</span></div>
+          <div class="row"><span class="cont">Mid. East</span><span class="where">Oman, MENA region</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+      <h2>Career Timeline</h2>
+      <div class="timeline">
+
+        <div class="job">
+          <div class="when">2020 — Present · Barcelona</div>
+          <div class="role">Owner &amp; Director</div>
+          <div class="org"><b>New Day Climate</b> — climate consultancy · pharma, chemicals, transport, smart mobility &amp; international development clients</div>
+          <ul>
+            <li><span class="hl">Renewable energy &amp; EV investment analysis</span> for corporate clients evaluating energy-transition options.</li>
+            <li>Climate transition &amp; sustainability strategy; corporate &amp; product GHG footprints; Paris-aligned &amp; intensity target setting incl. SBTi; Scope 1–3 reduction plans (2021–2024).</li>
+            <li>Scope 3 supplier engagement, scenario analysis, climate risk, transition planning &amp; climate reporting; LCA &amp; eco-design product advisory.</li>
+            <li>Sustainable supply chain program for a pharmaceutical company — supplier sustainability standards, risk assessment &amp; training.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="when">2015 — 2019 · Barcelona &amp; International</div>
+          <div class="role">Manager, Strategy &amp; Operations</div>
+          <div class="org"><b>Deloitte Consulting</b> — on-the-ground delivery in Spain &amp; Latin America (Chile, Peru)</div>
+          <ul>
+            <li>Developed Deloitte Spain&#8217;s sustainable operations consulting offering — supply chain transparency, impact mitigation, circular economy — delivered for Canon.</li>
+            <li>Led digital supply chain transformation driving a <span class="hl">multi-million-euro sales increase</span>; projects in digital, finance &amp; operational transformation.</li>
+          </ul>
+          <div class="clients"><b>Selected clients:</b> Coca-Cola · Allianz · Generali · IATA · Cigna · Radisson Hotel Group · Areas (Elior Group) · Canon</div>
+        </div>
+
+        <div class="job">
+          <div class="when">2013 — 2015 · Kabul</div>
+          <div class="role">Director of Operations — USAID ACE</div>
+          <div class="org"><b>DAI</b> — US$70M agricultural credit program: US$77M in loans to 32,000 farmers across 31 provinces</div>
+          <ul>
+            <li>Led <span class="hl">50 staff</span> across HR, finance, procurement &amp; IT; managed US$7M operations budget.</li>
+            <li>Increased program revenue by US$1.1M through budget restructuring.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="when">2011 — 2013 · Washington, DC</div>
+          <div class="role">Project Coordinator — Environment &amp; Energy</div>
+          <div class="org"><b>DAI</b> — water, energy &amp; economic growth portfolio</div>
+          <ul>
+            <li>Start-up of a US$16M water finance program in MENA; closedown of US$24M Philippines portfolio; field work in Kenya &amp; Oman.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="when">2008 — 2010 · Nigeria &amp; South Sudan</div>
+          <div class="role">Logistics, Administration &amp; Security</div>
+          <div class="org"><b>Doctors Without Borders (MSF)</b></div>
+          <ul>
+            <li>Managed 35 staff building healthcare facilities in refugee camps; ran emergency vaccine supply chain reaching 3,000 people.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="when">2003 — 2006 · China &amp; Argentina</div>
+          <div class="role">University Instructor &amp; Project Coordinator</div>
+          <div class="org"><b>Nanjing Medical University · Universidad de Cuyo</b></div>
+          <ul>
+            <li>Founded a 100+ member environmental organization in Nanjing; led a 200-person HIV/AIDS awareness program.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="beyond">
+        <b>Beyond work</b> &nbsp; Lived long-term on five continents · thru-hiked the 2,190-mile Appalachian Trail · lived a year in a cabin in rural Alaska · worked on a commercial fishing boat · coached a high-school hockey team.
+      </div>
+    </div>
+  </div>
+</div>
+<a class="dl" href="/climate/Keith_Nelson_CV.pdf" download>Download PDF</a>
+</body>
+</html>
