@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<title>Keith Nelson — CV</title>
+<link rel="icon" href="/favicon.ico?v=1" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=1">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=1">
+<link rel="apple-touch-icon" href="/favicon-180.png?v=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1B6B4A;
+    --green-deep: #14523A;
+    --green-tint: #EDF4F0;
+    --green-line: #BFD8CC;
+    --ink: #2B2F2D;
+    --grey: #6A736E;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  html, body { width: 210mm; }
+  body { font-family: "Lato", sans-serif; color: var(--ink); background: #fff; }
+  .page { background: #fff; width: 210mm; height: 297mm; display: flex; flex-direction: column; overflow: hidden; }
+
+  /* ===== Header ===== */
+  .header { height: 34mm; padding: 8mm 14mm 0 14mm; }
+  .header .toprow { display: flex; justify-content: space-between; align-items: center; }
+  h1 { font-family: "Lora", serif; font-size: 27pt; font-weight: 700; letter-spacing: 0.5pt; color: var(--ink); }
+  h1 .last { color: var(--green); }
+  .titleline { font-family: "Lora", serif; font-style: italic; font-size: 8.7pt; color: var(--green-deep); margin-top: 1.3mm; white-space: nowrap; }
+  .contact { margin-top: 2.2mm; font-size: 7.6pt; color: var(--grey); letter-spacing: 0.1pt; }
+  .contact b { color: var(--ink); font-weight: 700; }
+  .contact a { color: inherit; text-decoration: underline; }
+  .sep { color: var(--green-line); padding: 0 1.3mm; }
+  .citizen {
+    font-size: 7.1pt; color: var(--green-deep); flex-shrink: 0;
+    border-radius: 2.6mm; padding: 1.1mm 3mm; white-space: nowrap; margin-left: 2mm;
+    background: var(--green-tint); font-weight: 700; letter-spacing: 0.3pt;
+  }
+
+  /* ===== Stat band ===== */
+  .stats { display: flex; background: var(--green); color: #fff; padding: 2.6mm 14mm; height: 14mm; position: relative; z-index: 1; margin-bottom: -0.3mm; }
+  .stat { flex: 1; text-align: center; border-right: 1px solid rgba(255,255,255,0.25); padding: 0 2mm; }
+  .stat:last-child { border-right: none; }
+  .stat .num { font-family: "Lora", serif; font-size: 14pt; font-weight: 700; line-height: 1.1; }
+  .stat .num.sm { font-size: 10.5pt; }
+  .stat .lbl { font-size: 6pt; text-transform: uppercase; letter-spacing: 0.6pt; opacity: 0.85; margin-top: 0.6mm; line-height: 1.15; }
+
+  /* ===== Columns ===== */
+  .cols { display: flex; height: 249mm; overflow: hidden; page-break-inside: avoid; }
+  .sidebar { width: 64mm; background: var(--green-tint); padding: 5.5mm 5.5mm 4mm 14mm; overflow: hidden; }
+  .main { width: 146mm; padding: 5.5mm 14mm 4mm 8mm; overflow: hidden; }
+
+  h2 {
+    font-family: "Lato", sans-serif; font-weight: 900; font-size: 8.5pt; text-transform: uppercase;
+    letter-spacing: 1.6pt; color: var(--green); margin-bottom: 2.4mm;
+  }
+  .side-sec { margin-bottom: 2.9mm; }
+  .side-sec h2 { border-bottom: 1px solid var(--green-line); padding-bottom: 1.1mm; }
+
+  /* skill groups + chips */
+  .group { margin-bottom: 2.2mm; }
+  .group h3 { font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7pt; color: var(--grey); margin-bottom: 1.1mm; }
+  .chips { display: flex; flex-wrap: wrap; gap: 1.1mm; }
+  .chip {
+    font-size: 7pt; background: #fff;
+    border-radius: 2.2mm; padding: 0.7mm 2.1mm; color: var(--ink); line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  /* languages */
+  .lang { display: flex; justify-content: space-between; align-items: baseline; gap: 2mm; font-size: 8pt; padding: 0.7mm 0; border-bottom: 1px dotted var(--green-line); }
+  .lang:last-child { border-bottom: none; }
+  .lang .lvl { color: var(--grey); font-size: 7.3pt; font-style: italic; text-align: right; }
+
+  /* education */
+  .edu { margin-bottom: 1.8mm; font-size: 7.7pt; line-height: 1.28; }
+  .edu b { display: block; }
+  .edu span { color: var(--grey); font-size: 7.3pt; }
+
+  /* footprint */
+  .fp { font-size: 8pt; line-height: 1.4; }
+  .fp .row { display: flex; margin-bottom: 0.9mm; }
+  .fp .cont { font-weight: 900; color: var(--green-deep); width: 17mm; flex-shrink: 0; font-size: 7.1pt; text-transform: uppercase; letter-spacing: 0.5pt; padding-top: 0.3mm; }
+  .fp .where { color: var(--ink); font-size: 7.7pt; }
+
+  /* ===== Timeline ===== */
+  .timeline { position: relative; padding-left: 6mm; }
+  .timeline::before {
+    content: ""; position: absolute; left: 1.1mm; top: 2mm; bottom: 2mm;
+    width: 2px; background: var(--green-line);
+  }
+  .job { position: relative; margin-bottom: 3mm; }
+  .job::before {
+    content: ""; position: absolute; left: -6mm; top: 1.2mm; width: 2.6mm; height: 2.6mm;
+    border-radius: 50%; background: var(--green); border: 2px solid #fff;
+    box-shadow: 0 0 0 1.5px var(--green);
+  }
+  .job .when { font-size: 7.2pt; font-weight: 900; color: var(--green); text-transform: uppercase; letter-spacing: 0.8pt; }
+  .job .role { font-family: "Lora", serif; font-size: 10.2pt; font-weight: 700; margin-top: 0.4mm; }
+  .job .org { font-size: 8.2pt; color: var(--grey); margin-top: 0.3mm; }
+  .job .org b { color: var(--ink); font-weight: 700; }
+  .job ul { margin: 1mm 0 0 3.4mm; }
+  .job li { font-size: 8.1pt; line-height: 1.28; margin-bottom: 0.6mm; }
+  .job li::marker { color: var(--green); }
+  .hl { background: linear-gradient(transparent 62%, #CFE5DA 62%); font-weight: 700; }
+  .clients { font-size: 7.6pt; color: var(--grey); margin-top: 0.8mm; }
+  .clients b { color: var(--green-deep); font-weight: 900; font-size: 7pt; text-transform: uppercase; letter-spacing: 0.5pt; }
+
+  /* beyond work box */
+  .beyond {
+    margin-top: 2.6mm; border: 1px solid var(--green-line); border-radius: 2mm;
+    background: var(--green-tint); padding: 2mm 3.5mm; font-size: 8pt; line-height: 1.4;
+  }
+  .beyond b { color: var(--green); font-weight: 900; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 1pt; }
+
+  @media screen {
+    html, body { width: 100%; }
+    body { background: #39463F; display: flex; flex-direction: column; align-items: center; padding: 10mm 0; }
+    .page { box-shadow: 0 10px 40px rgba(0,0,0,0.45); }
+    .dl { position: fixed; right: 16px; bottom: 16px; background: var(--green); color: #fff;
+          font-family: "Lato", sans-serif; font-weight: 700; font-size: 14px; text-decoration: none;
+          padding: 10px 18px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.25); }
+    .dl:hover { background: var(--green-deep); }
+  }
+  @media print { .dl { display: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="toprow">
+      <h1>KEITH <span class="last">NELSON</span></h1>
+      <div class="citizen">Dual US &amp; Spanish citizen · full EU &amp; US work rights</div>
+    </div>
+    <div class="titleline">Climate Consulting Leader — Team Management · Carbon Accounting · Sustainability Technology · Business Transformation</div>
+    <div class="contact">
+      <b>keith@newdayclimate.com</b><span class="sep">|</span>+1 617 351 8149<span class="sep">|</span><a href="https://www.newdayclimate.com/" target="_blank" rel="noopener">newdayclimate.com</a><span class="sep">|</span>linkedin.com/in/keith-nelson-climate-strategy
+    </div>
+  </div>
+
+  <!-- Stat band -->
+  <div class="stats">
+    <div class="stat"><div class="num">15+</div><div class="lbl">Years global experience</div></div>
+    <div class="stat"><div class="num">5</div><div class="lbl">Continents</div></div>
+    <div class="stat"><div class="num">40+</div><div class="lbl">Consulting projects</div></div>
+    <div class="stat"><div class="num">$70M</div><div class="lbl">Largest program</div></div>
+    <div class="stat"><div class="num">50+</div><div class="lbl">Staff managed</div></div>
+  </div>
+
+  <!-- Columns -->
+  <div class="cols">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="side-sec">
+        <h2>Core Strengths</h2>
+        <div class="group">
+          <h3>Climate &amp; Sustainability</h3>
+          <div class="chips">
+            <span class="chip">Carbon accounting (GHG Protocol)</span>
+            <span class="chip">CDP &amp; CSRD reporting</span>
+            <span class="chip">SBTi target development</span>
+            <span class="chip">Climate risk &amp; strategy</span>
+            <span class="chip">LCA &amp; ecodesign</span>
+          </div>
+        </div>
+        <div class="group">
+          <h3>Technology &amp; Platforms</h3>
+          <div class="chips">
+            <span class="chip">CO₂ management software</span>
+            <span class="chip">EcoVadis</span>
+            <span class="chip">IT &amp; digital transformation</span>
+            <span class="chip">Systems integration</span>
+            <span class="chip">Data visualization &amp; dashboards</span>
+            <span class="chip">AI tools</span>
+          </div>
+        </div>
+        <div class="group">
+          <h3>Team &amp; Client Leadership</h3>
+          <div class="chips">
+            <span class="chip">Team management &amp; mentoring</span>
+            <span class="chip">Methodology development</span>
+            <span class="chip">Agile delivery</span>
+            <span class="chip">Large multinational clients</span>
+            <span class="chip">Budgets &amp; revenue</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-sec">
+        <h2>Languages</h2>
+        <div class="lang"><span>English</span><span class="lvl">native</span></div>
+        <div class="lang"><span>Spanish</span><span class="lvl">full professional</span></div>
+        <div class="lang"><span>Catalan</span><span class="lvl">high comprehension;<br>basic spoken</span></div>
+        <div class="lang"><span>Mandarin Chinese</span><span class="lvl">basic</span></div>
+        <div class="lang"><span>French</span><span class="lvl">basic</span></div>
+      </div>
+
+      <div class="side-sec">
+        <h2>Education</h2>
+        <div class="edu"><b>Executive MBA</b>ESADE Business School <span>· 2016</span></div>
+        <div class="edu"><b>Postgraduate Degree, Environmental Sustainability</b>University of Salamanca <span>· 2018</span></div>
+        <div class="edu"><b>MA, International Development</b>IBEI / University of Barcelona <span>· 2007</span></div>
+        <div class="edu"><b>BA with Honors</b>Tufts University, Boston <span>· 2000</span></div>
+      </div>
+
+      <div class="side-sec">
+        <h2>Global Footprint</h2>
+        <div class="fp">
+          <div class="row"><span class="cont">Base</span><span class="where">United States · Spain (citizen of both)</span></div>
+          <div class="row"><span class="cont">Worked</span><span class="where">Chile, Peru, Afghanistan, China, Philippines, Kenya, Oman &amp; MENA</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+      <h2>Career Timeline</h2>
+      <div class="timeline">
+
+        <div class="job">
+          <div class="when">2020 — Present</div>
+          <div class="role">Director &amp; Lead Consultant</div>
+          <div class="org"><b>New Day Climate</b> — boutique climate consultancy; managing project teams of subcontracted consultants, domain experts &amp; client staff across multiple concurrent engagements</div>
+          <ul>
+            <li>Own end-to-end client relationships as <span class="hl">main point of contact with CEOs, purchasing teams &amp; senior stakeholders</span>; manage proposals, scope/pricing, contract negotiations &amp; delivery.</li>
+            <li>Deliver <span class="hl">CSRD-aligned climate risk reporting, CDP preparation support, SBTi target development</span> &amp; GHG Protocol-compliant emissions inventories (Scope 1, 2 &amp; 3).</li>
+            <li>Developed standardized consulting methodologies for carbon accounting, climate risk assessment &amp; sustainable procurement. This includes custom interactive tools (scenario analysis web apps, supply-chain dashboards, ecodesign calculators).</li>
+            <li>Built an <span class="hl">ecodesign optimization tool</span> for a manufacturing client — compares LCA data across product variants, enabling data-driven decisions on materials, processes &amp; design to minimize environmental impact.</li>
+            <li>Led a sustainable supply-chain &amp; procurement program — supplier standards, risk assessment, engagement &amp; training.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="when">2015 — 2019 · Barcelona &amp; International</div>
+          <div class="role">Manager — Strategy &amp; Operations</div>
+          <div class="org"><b>Deloitte Consulting</b> — client delivery lead across digital, data &amp; operations transformation</div>
+          <ul>
+            <li><span class="hl">Developed Deloitte Spain's sustainable operations consulting service offering</span> — supply-chain transparency, impact mitigation &amp; circular economy, delivered for Canon.</li>
+            <li>Managed &amp; mentored teams of <span class="hl">3–8 consultants</span> across concurrent engagements — performance reviews, professional development &amp; workload allocation; developed reusable delivery methodologies to standardize service quality.</li>
+            <li><span class="hl">AI finance &amp; logistics platform:</span> Led delivery of an AI-driven finance &amp; logistics management platform for <b>Coca-Cola European Partners</b>, built on SAP — supply-chain control tower, data integration, custom KPIs &amp; dashboards.</li>
+            <li><span class="hl">Systems transformation:</span> Managed logistics, finance &amp; procure-to-pay optimization projects, including a systems-integration program for <b>Siemens Gamesa</b>.</li>
+            <li><span class="hl">Agile delivery:</span> Led agile delivery of <b>Allianz</b>'s "One Claims" insurance-claims platform — sprint planning, story-point velocity, SIT/UAT.</li>
+          </ul>
+          <div class="clients"><b>Selected clients:</b> Coca-Cola · Allianz · Siemens Gamesa · Generali · IATA · Cigna · Radisson Hotel Group · Areas / Elior Group · Canon</div>
+        </div>
+
+        <div class="job">
+          <div class="when">2013 — 2015 · Kabul</div>
+          <div class="role">Director of Operations — USAID ACE</div>
+          <div class="org"><b>DAI</b> — US$77M agricultural credit program: Providing loans to 32,000 farmers across 31 provinces</div>
+          <ul>
+            <li>Led 50 staff across HR, finance, procurement &amp; IT; managed US$7M operations budget.</li>
+            <li>Increased program revenue by US$1.1M through budget restructuring.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="when">2011 — 2013 · Washington, DC</div>
+          <div class="role">Project Coordinator — Environment &amp; Energy</div>
+          <div class="org"><b>DAI</b> — water, energy &amp; economic growth portfolio</div>
+          <ul>
+            <li>Supported start-up and close-down of international water, energy &amp; economic-growth programs across MENA, the Philippines, Kenya &amp; Oman.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="when">2008 — 2010 · Nigeria &amp; South Sudan</div>
+          <div class="role">Logistics, Administration &amp; Security</div>
+          <div class="org"><b>Doctors Without Borders (MSF)</b></div>
+          <ul>
+            <li>Managed 35 staff building healthcare facilities in refugee-camp settings; ran emergency vaccine supply chain reaching 3,000 people.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="beyond">
+        <b>Beyond work</b> &nbsp; Active in several climate-focused NGOs &amp; activist groups · thru-hiked the 2,190-mile Appalachian Trail.
+      </div>
+    </div>
+  </div>
+</div>
+<a class="dl" href="/carbon/Keith_Nelson_CV.pdf" download>Download PDF</a>
+</body>
+</html>
